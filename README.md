@@ -14,7 +14,7 @@ A rice I used a lot is [HyprNova](https://github.com/zDyanTB/HyprNova). It is si
 - **Terminal**: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **Shell**: [Zsh](https://www.zsh.org/)
 - **Fetch**: [Fastfetch](https://github.com/fastfetch-cli/fastfetch)
-- **Editor**: [Neovim](https://zed.dev/) (There is a nvim config which almost is vanilla [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim))
+- **Editor**: [Zed](https://zed.dev/) (There is a nvim config which almost is vanilla [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim))
 - **Bar**: [Waybar](https://github.com/Alexays/Waybar)
 - **Logout**: [Wlogout](https://github.com/ArtsyMacaw/wlogout)
 - **Launcher**: [Wofi](https://sr.ht/~scoopta/wofi/)
