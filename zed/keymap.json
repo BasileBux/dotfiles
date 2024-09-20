@@ -18,7 +18,7 @@
     "bindings": {
       // normal mode
       "O O": "editor::NewlineBelow",
-      "space f": "file_finder::Toggle",
+      "space s f": "file_finder::Toggle",
       "space o": "tab_switcher::Toggle",
       "space t": "workspace::NewCenterTerminal",
       "g c": "editor::ToggleComments",
