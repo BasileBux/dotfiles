@@ -1,0 +1,52 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "claude-3-5-sonnet-20240620"
+    },
+    "version": "2"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "theme": "Tokyo Night Storm", // "Tokyo Night Storm"
+  "vim_mode": true,
+  "buffer_font_family": "GeistMono Nerd Font",
+  /* Nice fonts:
+    "Monocraft Nerd Font"
+    "GeistMono Nerd Font"
+    "GoMono Nerd Font"
+    "GohuFont 11 Nerd Font"
+  */
+  "ui_font_size": 14,
+  "buffer_font_size": 16,
+  "relative_line_numbers": true,
+  "cursor_blink": false,
+  "preferred_line_length": 90,
+  "soft_wrap": "preferred_line_length",
+  "tab_bar": {
+    "show": false
+  },
+  "project_panel": {
+    "dock": "right"
+  },
+  "toolbar": {
+    "breadcrumbs": true,
+    "quick_actions": false
+  },
+  "format_on_save": "on",
+  "terminal": {
+    "font_family": "GeistMono Nerd Font",
+    "line_height": "standard"
+  },
+  "git": {
+    "inline_blame": {
+      "enabled": false
+    }
+  },
+  "scrollbar": {
+    "git_diff": false
+  },
+  "show_inline_completions": true
+}

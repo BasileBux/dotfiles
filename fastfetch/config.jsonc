@@ -1,0 +1,91 @@
+// source from https://github.com/cassiofb-dev/fastfetch-config
+// inspired (almost copied) of https://www.reddit.com/r/unixporn/comments/1cdkftm/hyprland_not_sure_how_it_looks_but_its_my_daily/#lightbox
+{
+	"$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+	"logo": {
+		"source": "~/.config/fastfetch/blaziken.png",
+		"type": "kitty",
+		"height": 20,
+                // "width": 40,
+	},
+    "display": {
+        "separator": "    "
+    },
+    "modules": [
+        {
+            "type": "custom",
+            "format": "┌─────────────────────────────────────────────────────────────┐\n"
+        },
+        {
+            "type": "os",
+            "key": "  ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "kernel",
+            "key": "  ",
+            "keyColor": "white"
+        },
+        {
+            "type": "packages",
+            "key": "  󰏖",
+            "keyColor": "red"
+        },
+        {
+            "type": "wm",
+            "key": "  󱄄",
+            "keyColor": "blue"
+        },
+        {
+            "type": "terminal",
+            "key": "  ",
+            "keyColor": "magenta"
+        },
+        {
+            "type": "shell",
+            "key": "  ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "custom",
+            "format": " "
+        },
+        {
+            "type": "custom",
+            "format": "├─────────────────────────────────────────────────────────────┤\n"
+        },
+        {
+            "type": "host",
+            "key": "  ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "cpu",
+            "key": "  ",
+            "keyColor": "red"
+        },
+        {
+            "type": "gpu",
+            "key": "  ",
+            "keyColor": "green"
+        },
+        {
+            "type": "memory",
+            "key": "  ",
+            "keyColor": "yellow"
+        },
+        {
+            "type": "disk",
+            "key": "  ",
+            "keyColor": "blue"
+        },
+        {
+            "type": "custom",
+            "format": " "
+        },
+        {
+            "type": "custom",
+            "format": "└─────────────────────────────────────────────────────────────┘"
+        },
+        ]
+}

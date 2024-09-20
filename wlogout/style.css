@@ -1,0 +1,70 @@
+@import '../waybar/macchiato.css';
+
+* {
+    text-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+}
+
+window {
+    font-family: GeistMono NF Medium;
+    font-size: 14pt;
+    color: @text; /* text */
+    background-color: rgba(30, 30, 46, 0.5);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+    border: none;
+    background-color: rgba(30, 30, 46, 0);
+    margin: 5px;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    color: @text;
+}
+
+button:hover {
+    background-color: @flamingo;
+    color: @mantle;
+}
+
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+#logout:hover {
+    background-image: image(url("./icons/logout-hover.png"));
+}
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+#lock:hover {
+    background-image: image(url("./icons/lock-hover.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"));
+}
+#suspend:hover {
+    background-image: image(url("./icons/sleep-hover.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+}
+#shutdown:hover {
+    background-image: image(url("./icons/power-hover.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+}
+#reboot:hover {
+    background-image: image(url("./icons/restart-hover.png"));
+}
+#sleep {
+    background-image: image(url("./icons/hibernate.png"));
+}
+#sleep:hover {
+    background-image: image(url("./icons/hibernate-hover.png"));
+}

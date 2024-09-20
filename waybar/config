@@ -1,0 +1,163 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 30, // Waybar height
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        //"custom/spotify",
+        "custom/player"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network",
+        "battery",
+        "battery#bat2",
+        "clock",
+        "custom/wlogout"
+    ],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "disable-markup": false,
+        "all-outputs": true,
+        "format":" {icon} ",
+        "format-icons": {
+            // vortex 1
+/*             "active": "", 
+            "empty": "",
+            "default": "" */
+
+            // vortex 2
+            "active": "",
+            "empty": "",
+            "default": ""
+
+            // fish
+/*             "active": "", 
+            "empty": "󰗣",
+            "default": "󰗣" */
+
+            // pac man
+/*             "active": "󰮯", 
+            "empty": "󰧵", 
+            "default": "󰊠" */
+
+            // star wars 1
+/*             "active": "", 
+            "empty": "",
+            "default": "" */
+
+            // star wars 2
+/*             "active": "", 
+            "empty": "󰣙",
+            "default": "󰣙" */
+
+            // stars
+/*             "active": "󰫢", 
+            "empty": "󰫣",
+            "default": "󰫣" */
+
+            // google dino
+/*             "active": "󱍢", 
+            "empty": "󰶵",
+            "default": "󰶵" */
+
+            // boat
+/*             "active": "󰻈", 
+            "empty": "󰞍",
+            "default": "󰞍" */
+        },
+        "persistent-workspaces": {
+            "*": 5
+        }
+    },
+    "clock": {
+        "tooltip-format": "{:%d-%m-%Y | %H:%M}",
+        "format-alt": "{:%d-%m-%Y}"
+    },
+    "cpu": {
+        "format": "{usage}%  "
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}  {capacity}%",
+        "tooltip-format": "{power}W",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ],
+        "on-click": "hyprctl dispatch -- exec kitty --class floating -e python3 ~/asusctl-python-ui/main.py"
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": " ",
+        "format-ethernet": " 󰛳 ",
+        "format-disconnected": " 󰖪 ",
+        "tooltip-format": "{essid} {signalStrength}%",
+        "interval": 7,
+        "on-click": "nm-connection-editor"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-muted": "{volume}% ",
+        "format-icons": {
+            "headphones": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "",
+                ""
+            ]
+        },
+        "on-click": "flatpak run org.pulseaudio.pavucontrol"
+    },
+    "bluetooth": {
+        "format": "  ",
+        "tooltip-format": "{status}",
+        "on-click": "blueman-manager"
+    },
+    "custom/spotify": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/spotify.sh",
+        "exec-if": "pgrep spotify",
+        "escape": true, 
+        "on-click": "sh ~/.config/waybar/modules/spotify_click.sh"
+    },
+    "custom/player": {
+        "interval": 1,
+        "return-type": "json",
+        "exec": "~/.config/waybar/modules/player.sh",
+        // "exec-if": "pgrep spotify || pgrep firefox",
+        "escape": true,
+	"on-click": "hyprctl dispatch -- exec kitty --class player -c ~/.config/kitty/kitty_small.conf -e python3 ~/playerctl-kitty/main.py"
+    }, 
+
+    "custom/wlogout": {
+        "tooltip": true,
+        "tooltip-format": "Power menu",
+        "format": "",
+        "on-click": "~/.config/hypr/scripts/wlogout.sh"
+    }
+    
+}

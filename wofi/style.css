@@ -1,0 +1,43 @@
+@import "macchiato.css" * {
+  font-family: GeistMono NF;
+  color: @text;
+}
+
+#outer-box {
+  padding: 15px 15px 15px 15px;
+}
+
+#window {
+  background: #181926;
+  margin: auto;
+  padding: 0px;
+  border-radius: 14px;
+  border: 1px solid #fe97e1;
+}
+
+#input {
+  padding: 8px 8px;
+  margin-bottom: 15px;
+  border-radius: 90px;
+  background: #181926;
+}
+
+#img {
+  margin-right: 6px;
+}
+
+#text {
+  margin: 2px;
+}
+
+#entry {
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+#entry:selected {
+  background-color: #313244;
+  outline: none;
+  border: none;
+}

@@ -1,0 +1,35 @@
+\e[0;32m# Media Playback Controls: \e[0m
+- SUPER + SPACE: Pause media playback
+- SUPER + X: Play previous track
+- SUPER + C: Play next track
+
+\e[0;32m# Waybar and System Refresh: \e[0m
+- SUPER + W: Toggle hide/show Waybar
+- SUPER + R: Refresh system
+
+\e[0;32m# Application Management: \e[0m
+- SUPER + T: Launch terminal
+- SUPER + E: Launch file manager
+- SUPER + B: Launch Bluetooth manager
+- SUPER + Q: Close active window
+- SUPER + L: Logout
+
+\e[0;32m# Window Management: \e[0m
+- SUPER + F: Toggle fullscreen for active window
+- SUPER + SHIFT + F: Toggle floating mode for active window
+- SUPER + ALT + F: Set all windows to float
+- SUPER + J: Toggle between tiled and stacked layout (dwindle)
+
+\e[0;32m# Workspace Management: \e[0m
+- SUPER + Arrow Keys: Move focus to window in the specified direction
+- SUPER + SHIFT + Arrow Keys: Move active window in the specified direction
+- SUPER + [1-0]: Switch to the specified workspace
+- SUPER + SHIFT + [1-0]: Move active window to the specified workspace
+- SUPER + Tab: Cycle through workspaces forward
+- SUPER + SHIFT + Tab: Cycle through workspaces backward
+- SUPER + Comma/Period: Cycle through existing workspaces
+- SUPER + Mouse Scroll: Scroll through existing workspaces
+
+\e[0;32m# Mouse Interaction: \e[0m
+- SUPER + Left Mouse Button (LMB): Move window
+- SUPER + Right Mouse Button (RMB): Resize window

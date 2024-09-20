@@ -1,0 +1,136 @@
+@import "macchiato.css";
+
+* {
+  /* reference the color by using @color-name */
+  border: none;
+  border-radius: 0;
+  font-family: GeistMono NF;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  /* you can also GTK3 CSS functions! */
+  /* background-color: shade(@rgbaBase, 0.9); */
+  background-color: transparent;
+  border: 0px solid alpha(@crust, 0.3);
+  color: @text;
+}
+
+.modules-left {
+  background-color: @rgbaMantle;
+  border-radius: 6px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.modules-center {
+  background-color: @rgbaMantle;
+  padding: 0px 10px;
+  border-radius: 6px;
+  margin-top: 2px;
+}
+
+.modules-right {
+  background-color: @rgbaMantle;
+  border-radius: 6px;
+  padding: 0px 6px;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+window#waybar.hidden {
+  opacity: 0;
+}
+
+#workspaces {
+  margin-left: 3px;
+  margin-right: 3px;
+  padding: 0 5px;
+}
+
+#workspaces button {
+  padding: 0 1px;
+  background: transparent;
+  border-bottom: 0px solid transparent;
+  min-width: 0px;
+  color: @overlay0;
+}
+
+#workspaces button.active {
+  color: @workspaces;
+}
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  color: @hover;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+}
+
+#clock,
+#battery,
+#network,
+#pulseaudio,
+#cpu #custom-player {
+  padding: 0 6px;
+  margin: 0 5px;
+}
+
+#custom-wlogout {
+  border-radius: 0.5rem;
+  padding: 0px 16px 0px 6px;
+  font-size: 12px;
+  /* add padding to left to keep it from being sticked to the left side*/
+}
+
+#clock:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#cpu:hover,
+#custom-player:hover,
+#custom-wlogout:hover {
+  color: @hover;
+}
+
+#cpu {
+  padding: 0 3px;
+  margin: 0 0px;
+}
+
+#battery.warning {
+  color: @crust;
+  background-color: @yellow;
+  border-radius: 6px;
+}
+
+#battery.critical {
+  color: @crust;
+  background-color: @red;
+  border-radius: 6px;
+}
+
+#battery.charging {
+  color: @crust;
+  background-color: @green;
+  border-radius: 6px;
+}
+
+#temperature.critical {
+  color: @crust;
+  background-color: @red;
+  border-radius: 6px;
+}
+
+tooltip {
+  background-color: @trans-crust;
+  border-radius: 3px;
+}
+
+tooltip label {
+  color: @text;
+}

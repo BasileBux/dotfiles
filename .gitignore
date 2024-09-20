@@ -1,0 +1,14 @@
+# Whitelist
+/*
+
+!.gitignore
+
+!fastfetch/
+!hypr/
+!kitty/
+!nvim/
+!waybar/
+!wlogout/
+!wofi/
+!zed/
+!zsh/
