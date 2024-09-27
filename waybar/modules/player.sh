@@ -22,6 +22,7 @@ if [[ -n "$class" ]]; then
     fi
 
     if [[ ${#info} > 30 ]]; then
+      fullTitle=$info
       info=$(echo $info | cut -c1-30)"..."
     fi
 
@@ -34,10 +35,11 @@ if [[ -n "$class" ]]; then
     fi
 
   fi
-  echo -e "{\"text\":\""$icon"${space}"$text"\", \"class\":\""$class"\"}"
+
+  echo -e "{\"text\":\""$icon"${space}"$text"\", \"class\":\""$class"\", \"tooltip\":\""$fullTitle"\"}"
   else
     class="No player currently"
-    echo -e "{\"text\":\""$text"\", \"class\":\""$class"\"}"
+    echo -e "{\"text\":\""$text"\", \"class\":\""$class"\", \"tooltip\":\"\"}"
 fi
 
 

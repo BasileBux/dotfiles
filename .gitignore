@@ -5,11 +5,21 @@
 
 !fastfetch/
 !hypr/
+hypr/configs/platform.conf
 !kitty/
 !nvim/
 !waybar/
 !wlogout/
 !wofi/
 !zed/
+
+# Add just one file from VSCode (needs folders to exist)
+!Code/
+Code/*
+!Code/User
+Code/User/*
+!Code/User/settings.json
+
 !README.md
+
 !wallpaper.png

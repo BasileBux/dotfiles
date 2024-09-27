@@ -1,0 +1,12 @@
+{
+    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.productIconTheme": "fluent-icons",
+    "editor.fontFamily": "'GeistMono NF'",
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "editor.stickyScroll.enabled": false,
+    "workbench.sideBar.location": "right",
+    "window.menuBarVisibility": "toggle",
+    "workbench.preferredHighContrastColorTheme": "Monokai Pro (Filter Octagon)"
+}

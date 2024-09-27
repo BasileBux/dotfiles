@@ -28,7 +28,7 @@ type Window struct {
 	Pid              int      `json:"pid"`
 	Xwayland         bool     `json:"xwayland"`
 	Pinned           bool     `json:"pinned"`
-	Fullscreen       int      `json:"fullscreen"`
+	Fullscreen       bool     `json:"fullscreen"`
 	FullscreenClient int      `json:"fullscreenClient"`
 	Grouped          []string `json:"grouped"`
 	Tags             []string `json:"tags"`

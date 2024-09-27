@@ -150,7 +150,7 @@
         "exec": "~/.config/waybar/modules/player.sh",
         // "exec-if": "pgrep spotify || pgrep firefox",
         "escape": true,
-	"on-click": "hyprctl dispatch -- exec kitty --class player -c ~/.config/kitty/kitty_small.conf -e python3 ~/playerctl-kitty/main.py"
+	"tooltip": true,
     }, 
 
     "custom/wlogout": {
