@@ -1,12 +1,180 @@
 {
-    "workbench.colorTheme": "Monokai Pro (Filter Octagon)",
-    "workbench.iconTheme": "material-icon-theme",
-    "workbench.productIconTheme": "fluent-icons",
-    "editor.fontFamily": "'GeistMono NF'",
-    "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
-    "editor.stickyScroll.enabled": false,
-    "workbench.sideBar.location": "right",
-    "window.menuBarVisibility": "toggle",
-    "workbench.preferredHighContrastColorTheme": "Monokai Pro (Filter Octagon)"
+  "editor.fontSize": 20,
+  "editor.fontFamily": "'GeistMono NF'",
+  "editor.minimap.enabled": false,
+  "workbench.sideBar.location": "right",
+  "workbench.colorTheme": "Tokyo Night Storm",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.productIconTheme": "fluent-icons",
+  "debug.onTaskErrors": "debugAnyway",
+  "vim.leader": " ",
+  "editor.cursorSurroundingLines": 10,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "leader",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ]
+    },
+    // splits
+    {
+      "before": [
+        "leader",
+        "v"
+      ],
+      "commands": [
+        ":vsplit"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "s"
+      ],
+      "commands": [
+        ":split"
+      ]
+    },
+    // panes
+    {
+      "before": [
+        "<C-h>"
+      ],
+      "commands": [
+        "workbench.action.focusLeftGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-j>"
+      ],
+      "commands": [
+        "workbench.action.focusBelowGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "commands": [
+        "workbench.action.focusAboveGroup"
+      ]
+    },
+    {
+      "before": [
+        "<C-l>"
+      ],
+      "commands": [
+        "workbench.action.focusRightGroup"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "f"
+      ],
+      "commands": [
+        "editor.action.formatDocument"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "s",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
+    },
+    {
+      "before": [
+        "leader",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.terminal.new"
+      ]
+    },
+    {
+      "before": [
+        "[",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.prev"
+      ]
+    },
+    {
+      "before": [
+        "]",
+        "d"
+      ],
+      "commands": [
+        "editor.action.marker.next"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        "editor.action.showDefinitionPreviewHover"
+      ]
+    },
+    {
+      "before": [
+        "O",
+        "O"
+      ],
+      "commands": [
+        "editor.action.insertLineAfter"
+      ]
+    }
+  ],
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    },
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<esc>"
+      ]
+    },
+  ],
+  "vim.useSystemClipboard": true,
+  "editor.lineNumbers": "relative",
+  "extensions.ignoreRecommendations": true,
+  "window.menuBarVisibility": "toggle",
+  "breadcrumbs.filePath": "last",
+  "editor.wordWrap": "wordWrapColumn",
+  "editor.wordWrapColumn": 90,
+  "[markdown]": {
+    "editor.wordWrap": "bounded"
+  },
+  "vim.textwidth": 90,
+  "editor.rulers": [
+    90
+  ],
+  "editor.stickyScroll.scrollWithEditor": false,
+  "workbench.tree.enableStickyScroll": false,
+  "editor.stickyScroll.enabled": false,
+  "cmake.showOptionsMovedNotification": false,
+  "makefile.configureOnOpen": true,
+  "workbench.startupEditor": "none",
+  "workbench.editor.showTabs": "none"
 }
