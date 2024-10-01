@@ -2,6 +2,8 @@
 
 Here are some simple dotfiles. Nothing to flashy, just functional.
 
+(Works on my machine btw)
+
 ## Inspirations
 
 I used a lot of stuf off [UnixPorn](https://www.reddit.com/r/unixporn/) so I don't own anything I guess.
