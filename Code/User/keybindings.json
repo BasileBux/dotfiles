@@ -1,0 +1,52 @@
+[
+    {
+        "key": "ctrl+d",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    // focus toggle on terminal pane
+    {
+        "key": "ctrl+shift+j",
+        "command": "workbench.action.togglePanel"
+    },
+    // toggle sidebar
+    {
+        "command": "runCommands",
+        "key": "ctrl+alt+y",
+        "args": {
+            "commands": [
+                "workbench.action.toggleSidebarVisibility",
+                "workbench.action.toggleActivityBarVisibility"
+            ]
+        }
+    },
+    // {
+    //     "command": "workbench.files.action.focusFilesExplorer",
+    //     "key": "ctrl+e",
+    //     "when": "editorTextFocus"
+    // },
+    {
+        "key": "ctrl+alt+x",
+        "command": "workbench.action.showMultipleEditorTabs",
+        "when": "!editorTabsVisible"
+    },
+    {
+        "key": "ctrl+alt+x",
+        "command": "workbench.action.hideEditorTabs",
+        "when": "editorTabsVisible"
+    },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "alt+j",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active"
+    },
+    {
+        "key": "alt+k",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly && vim.active"
+    },
+]
