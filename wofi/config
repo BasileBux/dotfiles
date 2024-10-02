@@ -1,6 +1,6 @@
 show=drun
 sort_order=default
-width=25%
+width=45%
 hide_scroll=true
 lines=6
 term=kitty
