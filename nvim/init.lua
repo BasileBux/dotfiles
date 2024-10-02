@@ -77,11 +77,10 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("i", "kk", "<Esc>")
-vim.keymap.set("n", "OO", "o<esc>k")
-vim.keymap.set("n", "oo", "O<esc>j")
+vim.keymap.set("n", "OO", "o<esc>")
 
-vim.keymap.set({ "n", "i" }, "<A-j>", ":m+1<cr>")
-vim.keymap.set({ "n", "i" }, "<A-k>", ":m-2<cr>")
+vim.keymap.set({ "n", "i", "v" }, "<A-j>", ":m+1<cr>")
+vim.keymap.set({ "n", "i", "v" }, "<A-k>", ":m-2<cr>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
