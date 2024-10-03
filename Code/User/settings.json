@@ -176,5 +176,7 @@
   "cmake.showOptionsMovedNotification": false,
   "makefile.configureOnOpen": true,
   "workbench.startupEditor": "none",
+  "workbench.activityBar.location": "hidden",
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 4 }",
   "workbench.editor.showTabs": "none"
 }
