@@ -60,7 +60,12 @@
       "ctrl-d": "pane::CloseActiveItem",
       "ctrl-shift-r": "zed::ResetBufferFontSize",
       "ctrl-alt-x": "editor::ToggleTabBar",
-      "ctrl-alt-y": "workspace::ToggleRightDock"
+      "ctrl-alt-y": "workspace::ToggleRightDock",
+
+      "left": null,
+      "right": null,
+      "up": null,
+      "down": null
     }
   },
   {
