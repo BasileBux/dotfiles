@@ -1,6 +1,7 @@
 #!/bin/bash
 
 max=255
+min=8
 steps=17
 
 # Run brightnessctl -l and store the output in a variable
