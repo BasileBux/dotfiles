@@ -15,7 +15,8 @@
         "args": {
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
-                "workbench.action.toggleActivityBarVisibility"
+                "workbench.action.toggleActivityBarVisibility",
+                "toggle.toggleCustomTitleBar"
             ]
         }
     },
@@ -25,14 +26,14 @@
     //     "when": "editorTextFocus"
     // },
     {
+        "command": "workbench.action.hideEditorTabs",
         "key": "ctrl+alt+x",
-        "command": "workbench.action.showMultipleEditorTabs",
-        "when": "!editorTabsVisible"
+        "when": "editorTabsVisible"
     },
     {
+        "command": "workbench.action.showMultipleEditorTabs",
         "key": "ctrl+alt+x",
-        "command": "workbench.action.hideEditorTabs",
-        "when": "editorTabsVisible"
+        "when": "!editorTabsVisible"
     },
     {
         "key": "n",
