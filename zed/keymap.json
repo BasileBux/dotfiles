@@ -30,6 +30,7 @@
       "g ]": "editor::GoToPrevDiagnostic",
       "g r": "editor::FindAllReferences",
       "space l l": "diagnostics::Deploy",
+      "space f": "editor::Format",
 
       "space p": "outline::Toggle",
       "space e": "task::Spawn",
