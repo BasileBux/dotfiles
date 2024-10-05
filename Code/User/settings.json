@@ -160,7 +160,7 @@
   "editor.lineNumbers": "relative",
   "extensions.ignoreRecommendations": true,
   "window.menuBarVisibility": "toggle",
-  "editor.glyphMargin": false,
+  // "editor.glyphMargin": false, // if this is on, you can't put breakpoints
   "editor.showFoldingControls": "never",
   "editor.wordWrap": "wordWrapColumn",
   "editor.wordWrapColumn": 90,
@@ -215,6 +215,7 @@
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "workbench.panel.defaultLocation": "right",
+  "workbench.activityBar.location": "top",
   "workbench.editor.showTabs": "none",
-  "workbench.activityBar.location": "hidden"
+  "window.customTitleBarVisibility": "auto",
 }
