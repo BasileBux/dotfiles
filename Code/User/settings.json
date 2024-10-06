@@ -215,7 +215,6 @@
   "terminal.integrated.fontSize": 16,
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "workbench.panel.defaultLocation": "right",
-  "workbench.activityBar.location": "top",
+  "workbench.activityBar.location": "hidden",
   "workbench.editor.showTabs": "none",
-  "window.customTitleBarVisibility": "auto",
 }
