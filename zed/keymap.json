@@ -1,81 +1,91 @@
 [
-  {
-    "context": "VimControl && !menu",
-    "bindings": {
-      // normal & visual mode
-    }
-  },
-  {
-    "context": "Editor && (vim_mode == normal || vim_mode == insert) && !VimWaiting && !menu",
-    "bindings": {
-      // normal & insert
-      "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp"
-    }
-  },
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
-      // normal mode
-      "O O": "editor::NewlineBelow",
-      "space s f": "file_finder::Toggle",
-      "space o": "tab_switcher::Toggle",
-      "space t": "workspace::NewCenterTerminal",
-      "g c": "editor::ToggleComments",
-      "space c": "pane::CloseActiveItem",
-      "g d": "editor::GoToDefinition",
-      "g v": "editor::GoToDefinitionSplit",
-      "space h": "editor::Hover",
-      "g [": "editor::GoToDiagnostic",
-      "g ]": "editor::GoToPrevDiagnostic",
-      "g r": "editor::FindAllReferences",
-      "space l l": "diagnostics::Deploy",
-      "space f": "editor::Format",
+	{
+		"context": "VimControl && !menu",
+		"bindings": {
+			// normal & visual mode
+		}
+	},
+	{
+		"context": "Editor && (vim_mode == normal || vim_mode == insert) && !VimWaiting && !menu",
+		"bindings": {
+			// normal & insert
+			"alt-j": "editor::MoveLineDown",
+			"alt-k": "editor::MoveLineUp"
+		}
+	},
+	{
+		"context": "vim_mode == normal && !menu",
+		"bindings": {
+			// normal mode
+			"O O": "editor::NewlineBelow",
+			"space s f": "file_finder::Toggle",
+			"space o": "tab_switcher::Toggle",
+			"space t": "workspace::NewCenterTerminal",
+			"g c": "editor::ToggleComments",
+			"space c": "pane::CloseActiveItem",
+			"g d": "editor::GoToDefinition",
+			"g v": "editor::GoToDefinitionSplit",
+			"space h": "editor::Hover",
+			"g [": "editor::GoToDiagnostic",
+			"g ]": "editor::GoToPrevDiagnostic",
+			"g r": "editor::FindAllReferences",
+			"space l l": "diagnostics::Deploy",
+			"space f": "editor::Format",
+			"ctrl-s": "editor::HalfPageDown",
 
-      "space p": "outline::Toggle",
-      "space e": "task::Spawn",
-      "space r": "task::Rerun"
-    }
-  },
-  {
-    "context": "vim_mode == visual && !menu",
-    "bindings": {
-      // visual, visual line & visual block modes
-      "alt-j": "editor::MoveLineDown",
-      "alt-k": "editor::MoveLineUp",
-      "g b": "editor::ToggleComments"
-    }
-  },
-  {
-    "context": "vim_mode == insert && !menu",
-    "bindings": {
-      // insert mode
-      "k j": "vim::NormalBefore", // remap kj in insert mode to escape.
-      "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
-    }
-  },
-  {
-    "context": "!menu",
-    "bindings": {
-      "ctrl-shift-t": "terminal_panel::ToggleFocus",
-      "ctrl-d": "pane::CloseActiveItem",
-      "ctrl-shift-r": "zed::ResetBufferFontSize",
-      "ctrl-alt-x": "editor::ToggleTabBar",
-      "ctrl-alt-y": "workspace::ToggleRightDock",
+			"space p": "outline::Toggle",
+			"space e": "task::Spawn",
+			"space r": "task::Rerun"
+		}
+	},
+	{
+		"context": "vim_mode == visual && !menu",
+		"bindings": {
+			// visual, visual line & visual block modes
+			"alt-j": "editor::MoveLineDown",
+			"alt-k": "editor::MoveLineUp",
+			"g b": "editor::ToggleComments"
+		}
+	},
+	{
+		"context": "vim_mode == insert && !menu",
+		"bindings": {
+			// insert mode
+			"k j": "vim::NormalBefore", // remap kj in insert mode to escape.
+			"j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+		}
+	},
+	{
+		"context": "!menu",
+		"bindings": {
+			"ctrl-shift-t": "terminal_panel::ToggleFocus",
+			"ctrl-d": "pane::CloseActiveItem",
+			"ctrl-shift-r": "zed::ResetBufferFontSize",
+			"ctrl-alt-x": "editor::ToggleTabBar",
+			"ctrl-alt-y": "workspace::ToggleRightDock",
+			"ctrl-e": "project_panel::ToggleFocus",
 
-      "left": null,
-      "right": null,
-      "up": null,
-      "down": null
-    }
-  },
-  {
-    "context": "Dock || Terminal || Editor",
-    "bindings": {
-      "ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-      "ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-      "ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-      "ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-    }
-  }
+			"left": null,
+			"right": null,
+			"up": null,
+			"down": null
+		}
+	},
+	{
+		"context": "Dock || Terminal || Editor",
+		"bindings": {
+			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
+		}
+	},
+	{
+		"context": "ProjectPanel && not_editing",
+		"bindings": {
+			"n": "project_panel::NewFile",
+			"d": "project_panel::Delete",
+			"r": "project_panel::Rename"
+		}
+	}
 ]
