@@ -216,5 +216,6 @@
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "workbench.panel.defaultLocation": "right",
   "workbench.activityBar.location": "hidden",
-  "workbench.editor.showTabs": "none",
+  "git.enabled": true,
+  "workbench.editor.showTabs": "none"
 }
