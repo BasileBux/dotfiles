@@ -3,6 +3,10 @@
         "key": "ctrl+d",
         "command": "workbench.action.closeActiveEditor"
     },
+    {
+        "key": "ctrl+s",
+        "command": "extension.vim_ctrl+d"
+    },
     // focus toggle on terminal pane
     {
         "key": "ctrl+shift+j",
@@ -16,15 +20,20 @@
             "commands": [
                 "workbench.action.toggleSidebarVisibility",
                 "workbench.action.toggleActivityBarVisibility",
-                "toggle.toggleCustomTitleBar"
+                "toggle.toggleCustomTitleBar",
             ]
-        }
+        },
     },
-    // {
-    //     "command": "workbench.files.action.focusFilesExplorer",
-    //     "key": "ctrl+e",
-    //     "when": "editorTextFocus"
-    // },
+    {
+        "command": "workbench.files.action.focusFilesExplorer",
+        "key": "ctrl+e",
+        "when": "editorTextFocus",
+    },
+    {
+        "command": "workbench.action.focusActiveEditorGroup",
+        "key": "ctrl+e",
+        "when": "!editorTextFocus"
+    },
     {
         "command": "workbench.action.hideEditorTabs",
         "key": "ctrl+alt+x",
@@ -36,11 +45,6 @@
         "when": "!editorTabsVisible"
     },
     {
-        "key": "n",
-        "command": "explorer.newFile",
-        "when": "filesExplorerFocus && !inputFocus"
-    },
-    {
         "key": "alt+j",
         "command": "editor.action.moveLinesDownAction",
         "when": "editorTextFocus && !editorReadonly && vim.active"
@@ -50,4 +54,29 @@
         "command": "editor.action.moveLinesUpAction",
         "when": "editorTextFocus && !editorReadonly && vim.active"
     },
+    {
+        "key": "n",
+        "command": "explorer.newFile",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "command": "renameFile",
+        "key": "r",
+        "when": "filesExplorerFocus && !inputFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "explorer.newFolder",
+        "when": "explorerViewletFocus"
+    },
+    {
+        "key": "shift+n",
+        "command": "workbench.action.newWindow",
+        "when": "!explorerViewletFocus"
+    },
+    {
+        "command": "deleteFile",
+        "key": "d",
+        "when": "filesExplorerFocus && !inputFocus"
+    }
 ]
