@@ -13,6 +13,7 @@ nvim/lazy-lock.json
 !wlogout/
 !wofi/
 !zed/
+!ohmyposh/
 
 # Add just one file from VSCode (needs folders to exist)
 !Code/
