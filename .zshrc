@@ -72,6 +72,9 @@ export PATH=$PATH:/home/basileb/.spicetify
 export EDITOR=/usr/bin/nvim
 export PATH=$HOME/.local/bin:$PATH
 
+export SUDO_EDITOR="nvim"
+alias "sudoedit"='function _sudoedit(){sudo -e "$1";};_sudoedit'
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
