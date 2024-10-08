@@ -129,7 +129,7 @@
                 ""
             ]
         },
-        "on-click": "flatpak run org.pulseaudio.pavucontrol"
+        "on-click": "pavucontrol"
     },
     "bluetooth": {
         "format": "  ",
