@@ -60,6 +60,7 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
     background = 'transparent'
     template = '❯'
 
+
 [transient_prompt]
   foreground_templates = [
     "{{if gt .Code 0}}red{{end}}",
@@ -72,3 +73,11 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   foreground = 'green'
   background = 'transparent'
   template = '❯❯ '
+
+# ❯
+# ×
+# Ʃ
+# Ȝ
+# ɀ
+# ɕ
+# ɳ
