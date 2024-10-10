@@ -18,21 +18,22 @@ window#waybar {
 }
 
 .modules-left {
-  background-color: @rgbaMantle;
+  /* background-color: @background; */
+  background-color: @background;
   border-radius: 6px;
   margin-top: 2px;
   margin-left: 2px;
 }
 
 .modules-center {
-  background-color: @rgbaMantle;
+  background-color: @background;
   padding: 0px 10px;
   border-radius: 6px;
   margin-top: 2px;
 }
 
 .modules-right {
-  background-color: @rgbaMantle;
+  background-color: @background;
   border-radius: 6px;
   padding: 0px 6px;
   margin-top: 2px;
