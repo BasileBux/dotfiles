@@ -12,6 +12,7 @@ type BatteryState uint8
 const (
 	DISCHARGING BatteryState = iota
 	CHARGING
+	PENDING_CHARGE
 	UNKNOWN
 )
 
@@ -141,6 +142,8 @@ func getUserInfo(info []Battery) UserInfo {
 			output.State = CHARGING
 		} else if info[0].State == "discharging" {
 			output.State = DISCHARGING
+		} else if info[0].State == "pending-charge" {
+			output.State = PENDING_CHARGE
 		} else {
 			output.State = UNKNOWN
 		}
@@ -165,6 +168,8 @@ func getUserInfo(info []Battery) UserInfo {
 		} else if !stateSet && b.State == "discharging" {
 			output.State = DISCHARGING
 			stateSet = true
+		} else if !stateSet && b.State == "pending-charge" {
+			output.State = PENDING_CHARGE
 		}
 	}
 
@@ -207,5 +212,9 @@ func main() {
 	}
 	fmt.Println("\033[1mBattery:\033[0m")
 	fmt.Printf("Charge is: %s%d%%\033[0m\n", color, userData.Percentage)
-	fmt.Printf("%s at a rate of: \033[34m%.3fW\033[0m\n", stateString, userData.EnergyRate)
+	if userData.State == PENDING_CHARGE {
+		fmt.Println("Pending charge (stable)")
+	} else {
+		fmt.Printf("%s at a rate of: \033[34m%.3fW\033[0m\n", stateString, userData.EnergyRate)
+	}
 }
