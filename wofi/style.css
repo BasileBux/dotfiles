@@ -12,13 +12,16 @@
   margin: auto;
   padding: 0px;
   border-radius: 14px;
-  border: 1px solid #fe97e1;
+  border: 0px solid #aa2284;
 }
 
 #input {
   padding: 8px 8px;
   margin-bottom: 15px;
   border-radius: 90px;
+  border: 0px;
+  color: @text;
+  font-weight: bold;
   background: #181926;
 }
 
@@ -31,13 +34,17 @@
 }
 
 #entry {
+  color: @text;
+  margin: 0px;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 7px;
   border: none;
 }
 
 #entry:selected {
   background-color: #313244;
-  outline: none;
+  border-radius: 7px;
+  margin: 0px;
+  padding: 10px;
   border: none;
 }
