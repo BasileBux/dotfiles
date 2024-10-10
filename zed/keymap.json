@@ -33,6 +33,9 @@
 			"space f": "editor::Format",
 			"ctrl-s": "editor::HalfPageDown",
 
+			"space v": "pane::SplitVertical",
+			"space s": "pane::SplitHorizontal",
+
 			"space p": "outline::Toggle",
 			"space e": "task::Spawn",
 			"space r": "task::Rerun"
