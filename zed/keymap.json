@@ -62,7 +62,7 @@
 		"context": "!menu",
 		"bindings": {
 			"ctrl-shift-t": "terminal_panel::ToggleFocus",
-			"ctrl-d": "pane::CloseActiveItem",
+			"ctrl-w": "pane::CloseActiveItem",
 			"ctrl-shift-r": "zed::ResetBufferFontSize",
 			"ctrl-alt-x": "editor::ToggleTabBar",
 			"ctrl-alt-y": "workspace::ToggleRightDock",

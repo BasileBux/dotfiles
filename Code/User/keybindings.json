@@ -1,6 +1,6 @@
 [
     {
-        "key": "ctrl+d",
+        "key": "ctrl+w",
         "command": "workbench.action.closeActiveEditor"
     },
     {
