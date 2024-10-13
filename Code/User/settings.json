@@ -219,5 +219,6 @@
   "git.enabled": true,
   "workbench.editor.showTabs": "none",
   "window.customTitleBarVisibility": "auto",
-  "workbench.editor.enablePreview": false
+  "workbench.editor.enablePreview": false,
+  "latex-workshop.formatting.latex": "latexindent"
 }
