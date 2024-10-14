@@ -220,5 +220,10 @@
   "workbench.editor.showTabs": "none",
   "window.customTitleBarVisibility": "auto",
   "workbench.editor.enablePreview": false,
-  "latex-workshop.formatting.latex": "latexindent"
+  "latex-workshop.formatting.latex": "latexindent",
+  "[java]": {
+    "editor.defaultFormatter": "Oracle.oracle-java"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
 }
