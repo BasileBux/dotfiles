@@ -12,6 +12,7 @@ NUM_MONITORS=$(hyprctl monitors all | grep Monitor | wc --lines)
 NUM_MONITORS_ACTIVE=$(hyprctl monitors | grep Monitor | wc --lines)
 
 if [ $NUM_MONITORS -gt 1 ]; then
+    killall hypridle
     hyprctl keyword monitor "$DGPU_INTERNAL_MONITOR, disable"
     hyprctl keyword monitor "$INTEGRATED_INTERNAL_MONITOR, disable"
 
