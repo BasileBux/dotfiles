@@ -15,6 +15,7 @@ nvim/lazy-lock.json
 !zed/
 !ohmyposh/
 !yazi/
+!swaync/
 !scripts/
 
 # Add just one file from VSCode (needs folders to exist)
