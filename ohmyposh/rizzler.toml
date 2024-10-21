@@ -10,6 +10,13 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
   newline = true
 
   [[blocks.segments]]
+    type = 'session'
+    style = 'plain'
+    background = 'transparent'
+    foreground = 'yellow'
+    template = '{{ if .SSHSession }}  {{ end }}'
+
+  [[blocks.segments]]
     type = 'path'
     style = 'plain'
     background = 'transparent'
@@ -34,6 +41,8 @@ console_title_template = '{{ .Shell }} in {{ .Folder }}'
 [[blocks]]
   type = 'rprompt'
   overflow = 'hidden'
+
+    
 
   [[blocks.segments]]
     type = 'executiontime'
