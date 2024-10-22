@@ -68,7 +68,7 @@ vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<space>s", "<cmd>split<CR>")
 vim.keymap.set("n", "<space>bn", "<cmd>bnext<CR>")
 vim.keymap.set("n", "<space>bp", "<cmd>bprevious<CR>")
-vim.keymap.set("n", "<C-tab>", "<cmd>Ex<CR>")
+vim.keymap.set("n", "<space>ff", "<cmd>Ex<CR>")
 
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", ":m+1<cr>")
 vim.keymap.set({ "n", "i", "v" }, "<A-k>", ":m-2<cr>")
