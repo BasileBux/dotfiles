@@ -53,6 +53,8 @@ vim.opt.cursorline = true
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
 
+vim.opt.tabstop = 4
+
 -- line to keep code tidy
 vim.api.nvim_set_option_value("colorcolumn", "90", {})
 
@@ -418,7 +420,7 @@ require("lazy").setup({
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true }
+				local disable_filetypes = { c = true, cpp = true, go = true }
 				return {
 					timeout_ms = 500,
 					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
@@ -435,6 +437,7 @@ require("lazy").setup({
 				python = { "black" },
 				markdown = { "markdownlint" },
 				java = { "clang-format" },
+				go = { "goimports" },
 			},
 		},
 	},
