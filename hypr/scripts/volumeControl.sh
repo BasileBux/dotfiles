@@ -26,6 +26,8 @@ increaseVolume() {
     if [ "$currentVolume" -le "$((100 - steps))" ]; then
         newVolume=$((currentVolume + steps))
         amixer set Master "$newVolume%"
+    else
+        newVolume=100
     fi
     amixer set Master on
 }
@@ -37,6 +39,8 @@ decreaseVolume() {
 
     if [ "$currentVolume" -ge "$steps" ]; then
         amixer set Master "$newVolume%"
+    else
+        amixer set Master 0
     fi
     amixer set Master on
 }
