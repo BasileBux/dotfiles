@@ -66,10 +66,19 @@ vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "OO", "o<esc>")
 
+-- Move between tabs with ctrl + <jk>
+vim.keymap.set("n", "<C-j>", "<cmd>tabprevious<CR>")
+vim.keymap.set("n", "<C-k>", "<cmd>tabnext<CR>")
+
 vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<space>s", "<cmd>split<CR>")
-vim.keymap.set("n", "<space>bn", "<cmd>bnext<CR>")
-vim.keymap.set("n", "<space>bp", "<cmd>bprevious<CR>")
+
+-- Move between splits with shift + <hjkl>
+vim.keymap.set("n", "<H>", "<cmd>wincmd h<CR>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<L>", "<cmd>wincmd l<CR>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<J>", "<cmd>wincmd j<CR>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<K>", "<cmd>wincmd k<CR>", { desc = "Move focus to the upper window" })
+
 vim.keymap.set("n", "<space>ff", "<cmd>Ex<CR>")
 
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", ":m+1<cr>")
@@ -90,17 +99,10 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
 -- TIP: Disable arrow keys in normal mode
-vim.keymap.set({ "n", "i", "v" }, "<left>", '<cmd>echo "Use h to move dumbass!!"<CR>')
-vim.keymap.set({ "n", "i", "v" }, "<right>", '<cmd>echo "Use l to move dumbass!!"<CR>')
-vim.keymap.set({ "n", "i", "v" }, "<up>", '<cmd>echo "Use k to move dumbass!!"<CR>')
-vim.keymap.set({ "n", "i", "v" }, "<down>", '<cmd>echo "Use j to move dumbass!!"<CR>')
-
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
-vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<CR>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<CR>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<CR>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<CR>", { desc = "Move focus to the upper window" })
+vim.keymap.set({ "n", "i", "v" }, "<left>", '<cmd>echo "Use h to move stupid!!"<CR>')
+vim.keymap.set({ "n", "i", "v" }, "<right>", '<cmd>echo "Use l to move stupid!!"<CR>')
+vim.keymap.set({ "n", "i", "v" }, "<up>", '<cmd>echo "Use k to move stupid!!"<CR>')
+vim.keymap.set({ "n", "i", "v" }, "<down>", '<cmd>echo "Use j to move stupid!!"<CR>')
 
 -- colorscheme for lualine
 local colors = {
@@ -762,4 +764,3 @@ require("lazy").setup({
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
--- vim: ts=2 sts=2 sw=2 et
