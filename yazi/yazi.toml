@@ -2,3 +2,9 @@
 show_hidden = true
 show_symlink = true
 
+[opener]
+edit = [
+    { run = '/usr/bin/nvim "$@"', block = true, for = "unix" },
+    { run = '/usr/bin/nvim "$*"', block = true, for = "unix" },
+    { run = '/usr/bin/nvim "$0"', block = true, for = "unix" },
+]
