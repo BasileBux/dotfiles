@@ -1,8 +1,8 @@
 {
 	"assistant": {
 		"default_model": {
-			"provider": "copilot_chat",
-			"model": "gpt-4o"
+			"provider": "zed.dev",
+			"model": "claude-3-5-sonnet-latest"
 		},
 		"version": "2"
 	},
@@ -10,21 +10,19 @@
 		"diagnostics": false,
 		"metrics": false
 	},
-	"theme": "Tokyo Night Storm", // "Tokyo Night Storm"
+	"theme": "Tokyo Night Storm",
 	"vim_mode": true,
+	// Nice fonts:
 	"buffer_font_family": "GeistMono Nerd Font",
-	/* Nice fonts:
-    "Monocraft Nerd Font"
-    "GeistMono Nerd Font"
-    "GoMono Nerd Font"
-    "GohuFont 11 Nerd Font"
-  */
+    // "buffer_font_family": "Monocraft Nerd Font",
+    // "buffer_font_family": "GoMono Nerd Font",
+    // "buffer_font_family": "GohuFont 11 Nerd Font",
 	"ui_font_size": 14,
-	"buffer_font_size": 18,
+	"buffer_font_size": 20,
 	"relative_line_numbers": true,
 	"cursor_blink": false,
 	"preferred_line_length": 100,
-	"soft_wrap": "preferred_line_length",
+	"soft_wrap": "editor_width",
 	"tab_bar": {
 		"show": false
 	},
@@ -32,13 +30,18 @@
 		"dock": "right"
 	},
 	"toolbar": {
-		"breadcrumbs": true,
+		"breadcrumbs": false,
 		"quick_actions": false
 	},
 	"format_on_save": "off",
 	"terminal": {
 		"font_family": "GeistMono Nerd Font",
 		"line_height": "standard"
+	},
+	"gutter": {
+		"code_actions": false,
+		"runnables": false,
+		"folds": false
 	},
 	"git": {
 		"inline_blame": {
@@ -54,6 +57,9 @@
 		"C": {
 			"tab_size": 4,
 			"hard_tabs": true
+		},
+		"Markdown": {
+			"soft_wrap": "preferred_line_length"
 		}
 	},
 	"tab_size": 4,
