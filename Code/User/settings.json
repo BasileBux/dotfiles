@@ -96,7 +96,7 @@
         "t"
       ],
       "commands": [
-        "workbench.action.terminal.new"
+        "workbench.action.createTerminalEditor"
       ]
     },
     {
