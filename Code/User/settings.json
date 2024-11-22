@@ -41,7 +41,7 @@
     // panes
     {
       "before": [
-        "H"
+        "<C-h>"
       ],
       "commands": [
         "workbench.action.focusLeftGroup"
@@ -49,7 +49,7 @@
     },
     {
       "before": [
-        "J"
+        "<C-j>"
       ],
       "commands": [
         "workbench.action.focusBelowGroup"
@@ -57,7 +57,7 @@
     },
     {
       "before": [
-        "K"
+        "<C-k>"
       ],
       "commands": [
         "workbench.action.focusAboveGroup"
@@ -65,26 +65,10 @@
     },
     {
       "before": [
-        "L"
+        "<C-l>"
       ],
       "commands": [
         "workbench.action.focusRightGroup"
-      ]
-    },
-    {
-      "before": [
-        "<C-j>"
-      ],
-      "commands": [
-        "workbench.action.previousEditor"
-      ]
-    },
-    {
-      "before": [
-        "<C-k>"
-      ],
-      "commands": [
-        "workbench.action.nextEditor"
       ]
     },
     {
