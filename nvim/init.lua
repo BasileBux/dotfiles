@@ -70,6 +70,11 @@ vim.keymap.set("n", "OO", "o<esc>")
 vim.keymap.set("n", "<C-j>", "<cmd>tabprevious<CR>")
 vim.keymap.set("n", "<C-k>", "<cmd>tabnext<CR>")
 
+vim.keymap.set("n", "<C-J>", "<cmd>-1tabmove<CR>")
+vim.keymap.set("n", "<C-K>", "<cmd>+1tabmove<CR>")
+
+vim.keymap.set("n", "<space>t", "<cmd>tabnew<CR>")
+
 vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<space>s", "<cmd>split<CR>")
 
