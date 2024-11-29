@@ -29,7 +29,6 @@ vim.opt.undofile = true
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
-vim.opt.smartcase = true
 
 -- Keep signcolumn on by default
 vim.opt.signcolumn = "yes"
@@ -56,7 +55,7 @@ vim.opt.scrolloff = 10
 vim.opt.tabstop = 4
 
 -- line to keep code tidy
-vim.api.nvim_set_option_value("colorcolumn", "90", {})
+vim.opt.colorcolumn = "90"
 
 -- Set highlight on search, but clear on pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -67,11 +66,11 @@ vim.keymap.set("i", "jj", "<Esc>")
 vim.keymap.set("n", "OO", "o<esc>")
 
 -- Move between tabs with ctrl + <jk>
-vim.keymap.set("n", "<C-j>", "<cmd>tabprevious<CR>")
-vim.keymap.set("n", "<C-k>", "<cmd>tabnext<CR>")
+vim.keymap.set({ "n", "i" }, "<C-j>", "<cmd>tabprevious<CR>")
+vim.keymap.set({ "n", "i" }, "<C-k>", "<cmd>tabnext<CR>")
 
-vim.keymap.set("n", "<C-J>", "<cmd>-1tabmove<CR>")
-vim.keymap.set("n", "<C-K>", "<cmd>+1tabmove<CR>")
+vim.keymap.set("n", "<C-S-j>", "<cmd>-1tabmove<CR>")
+vim.keymap.set("n", "<C-S-k>", "<cmd>+1tabmove<CR>")
 
 vim.keymap.set("n", "<space>t", "<cmd>tabnew<CR>")
 
@@ -79,15 +78,15 @@ vim.keymap.set("n", "<space>v", "<cmd>vsplit<CR>")
 vim.keymap.set("n", "<space>s", "<cmd>split<CR>")
 
 -- Move between splits with shift + <hjkl>
-vim.keymap.set("n", "<H>", "<cmd>wincmd h<CR>", { desc = "Move focus to the left window" })
-vim.keymap.set("n", "<L>", "<cmd>wincmd l<CR>", { desc = "Move focus to the right window" })
-vim.keymap.set("n", "<J>", "<cmd>wincmd j<CR>", { desc = "Move focus to the lower window" })
-vim.keymap.set("n", "<K>", "<cmd>wincmd k<CR>", { desc = "Move focus to the upper window" })
+vim.keymap.set("n", "<S-h>", "<cmd>wincmd h<CR>", { desc = "Move focus to the left window" })
+vim.keymap.set("n", "<S-l>", "<cmd>wincmd l<CR>", { desc = "Move focus to the right window" })
+vim.keymap.set("n", "<S-j>", "<cmd>wincmd j<CR>", { desc = "Move focus to the lower window" })
+vim.keymap.set("n", "<S-k>", "<cmd>wincmd k<CR>", { desc = "Move focus to the upper window" })
 
 vim.keymap.set("n", "<space>ff", "<cmd>Ex<CR>")
 
-vim.keymap.set({ "n", "i", "v" }, "<A-j>", ":m+1<cr>")
-vim.keymap.set({ "n", "i", "v" }, "<A-k>", ":m-2<cr>")
+vim.keymap.set({ "n", "i", "v" }, "<A-j>", "<cmd>m+1<cr>")
+vim.keymap.set({ "n", "i", "v" }, "<A-k>", "<cmd>m-2<cr>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous [D]iagnostic message" })
@@ -135,7 +134,7 @@ local bubbles_theme = {
 	inactive = {
 		a = { fg = colors.white, bg = colors.black },
 		b = { fg = colors.white, bg = colors.black },
-		c = { fg = colors.white, bg = colors.dark_grey },
+		c = { fg = colors.white, bg = colors.black },
 	},
 }
 
@@ -427,7 +426,7 @@ require("lazy").setup({
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true, go = true }
+				local disable_filetypes = { c = true, cpp = true, h = true, go = true }
 				return {
 					timeout_ms = 500,
 					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
@@ -646,35 +645,20 @@ require("lazy").setup({
 		event = "VimEnter",
 		config = function()
 			local logo = [[
-                               __ _._.,._.__             
-                         .o8888888888888888P'            
-                       .d88888888888888888K              
-       ,8              888888888888888888888boo._        
-      :88b             888888888888888888888888888b.     
-         `Y8b          88888888888888888888888888888b.   
-           `Yb.       d8888888888888888888888888888888b  
-             `Yb.___.88888888888888888888888888888888888b
-               `Y888888888888888888888888888888CG88888P"'
-                 `88888888888888888888888888888MM88P"'   
-"Y888K"   "Y8P""Y888888888888888888888888oo._""""        
-  88888b    8    8888`Y88888888888888888888888oo.        
-  8"Y8888b  8    8888  ,8888888888888888888888888o,      
-  8  "Y8888b8    8888""Y8`Y8888888888888888888888b.      
-  8    "Y8888    8888   Y  `Y8888888888888888888888      
-  8      "Y88    8888     .d `Y88888888888888888888b     
-.d8b.      "8  .d8888b..d88P   `Y88888888888888888888    
-                                 `Y88888888888888888b.   
-                  "Y888P""Y8b. "Y888888888888888888888   
-                    888    888   Y888`Y888888888888888   
-                    888   d88P    Y88b `Y8888888888888   
-                    888"Y88K"      Y88b dPY8888888888P   
-                    888  Y88b       Y88dP  `Y88888888b   
-                    888   Y88b       Y8P     `Y8888888   
-                  .d888b.  Y88b.      Y        `Y88888   
-                                                 `Y88K   
-                                                   `Y8   
-                                                     '   
-   GOD'S IN HIS HEAVEN. ALL'S RIGHT WITH THE WORLD.      
+⠀⠀⢀⣤⣶⣶⣶⣶⣶⣶⣶⣤⠀⠀⠀
+⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣆⠀
+⢰⣾⣿⠛⠉⠙⣿⠛⠛⠛⢿⣿⣿⣿⡀
+⣾⣿⠉⠀⢸⡇⠀⠀⢸⡇⠀⣿⠿⢹⣿
+⣿⣿⠀⠀⠈⢡⡀⣀⣬⠁⠀⢉⣴⣾⣿
+⢿⡿⣿⣶⣖⣀⣉⠉⠀⣰⣶⣿⡿⢿⠿
+⠘⠃⠙⠛⠛⢛⣯⣀⣀⣟⡛⠛⠇⠘⠀
+⠀⠀⣤⠒⣶⢊⣛⢛⣛⢋⠛⣶⢢⡄⠀
+⠀⢸⣸⣿⠀⠀⠀⠀⠀⠀⠀⢻⣇⣸⠀
+⠀⢸⣭⣿⣾⣷⣿⣾⣷⣿⣿⣾⣯⣽⠀
+⠀⠀⠀⣿⣿⣿⡟⠛⣿⣿⣿⣿⡇⠀⠀
+⠀⠀⠀⠉⣭⣿⣏⠀⣿⣿⣿⣭⠁⠀⠀
+
+Despite everything, it's still you.
 ]]
 			logo = string.rep("\n", 8) .. logo .. "\n\n"
 			require("dashboard").setup({
@@ -732,20 +716,6 @@ require("lazy").setup({
 			extensions = {},
 		},
 	},
-
-	{
-		"zbirenbaum/copilot.lua",
-		cmd = "Copilot",
-		build = ":Copilot auth",
-		opts = {
-			suggestion = { enabled = false },
-			panel = { enabled = false },
-			filetypes = {
-				markdown = true,
-				help = true,
-			},
-		},
-	},
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
@@ -767,5 +737,8 @@ require("lazy").setup({
 		},
 	},
 })
+
+-- Better visual panes separation
+vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#f578d1", bg = "NONE" })
 
 -- The line beneath this is called `modeline`. See `:help modeline`
