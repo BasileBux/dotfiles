@@ -12,11 +12,13 @@
 	},
 	"theme": "Tokyo Night Storm",
 	"vim_mode": true,
+
 	// Nice fonts:
 	"buffer_font_family": "GeistMono Nerd Font",
-    // "buffer_font_family": "Monocraft Nerd Font",
-    // "buffer_font_family": "GoMono Nerd Font",
-    // "buffer_font_family": "GohuFont 11 Nerd Font",
+	// "buffer_font_family": "Monocraft Nerd Font",
+	// "buffer_font_family": "GoMono Nerd Font",
+	// "buffer_font_family": "GohuFont 11 Nerd Font",
+
 	"ui_font_size": 14,
 	"buffer_font_size": 20,
 	"relative_line_numbers": true,
@@ -64,5 +66,6 @@
 	},
 	"tab_size": 4,
 	"hard_tabs": true,
-	"remove_trailing_whitespace_on_save": true
+	"remove_trailing_whitespace_on_save": true,
+	"use_autoclose": false
 }
