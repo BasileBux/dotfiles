@@ -61,14 +61,18 @@ vim.opt.colorcolumn = "90"
 vim.opt.hlsearch = true
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
+-- Go back to normal
 vim.keymap.set("i", "kj", "<Esc>")
 vim.keymap.set("i", "jj", "<Esc>")
+
+-- Insert line above
 vim.keymap.set("n", "OO", "o<esc>")
 
 -- Move between tabs with ctrl + <jk>
 vim.keymap.set({ "n", "i" }, "<C-j>", "<cmd>tabprevious<CR>")
 vim.keymap.set({ "n", "i" }, "<C-k>", "<cmd>tabnext<CR>")
 
+-- Move tabs to reorganize them
 vim.keymap.set("n", "<C-S-j>", "<cmd>-1tabmove<CR>")
 vim.keymap.set("n", "<C-S-k>", "<cmd>+1tabmove<CR>")
 
