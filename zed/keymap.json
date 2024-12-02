@@ -17,12 +17,13 @@
 		"context": "vim_mode == normal && !menu",
 		"bindings": {
 			// normal mode
+			"ctrl-j": "tab_switcher::Toggle",
+			"ctrl-k": ["tab_switcher::Toggle", { "select_last": true }],
+
 			"O O": "editor::NewlineBelow",
 			"space s f": "file_finder::Toggle",
-			"space o": "tab_switcher::Toggle",
 			"space t": "workspace::NewCenterTerminal",
 			"g c": "editor::ToggleComments",
-			"space c": "pane::CloseActiveItem",
 			"g d": "editor::GoToDefinition",
 			"g v": "editor::GoToDefinitionSplit",
 			"space h": "editor::Hover",
@@ -31,14 +32,18 @@
 			"g r": "editor::FindAllReferences",
 			"space l l": "diagnostics::Deploy",
 			"space f": "editor::Format",
-			"ctrl-s": "editor::HalfPageDown",
 
 			"space v": "pane::SplitVertical",
 			"space s": "pane::SplitHorizontal",
 
 			"space p": "outline::Toggle",
 			"space e": "task::Spawn",
-			"space r": "task::Rerun"
+			"space r": "task::Rerun",
+
+			"shift-h": ["workspace::ActivatePaneInDirection", "Left"],
+			"shift-l": ["workspace::ActivatePaneInDirection", "Right"],
+			"shift-k": ["workspace::ActivatePaneInDirection", "Up"],
+			"shift-j": ["workspace::ActivatePaneInDirection", "Down"]
 		}
 	},
 	{
@@ -76,12 +81,7 @@
 	},
 	{
 		"context": "Dock || Terminal || Editor",
-		"bindings": {
-			"ctrl-h": ["workspace::ActivatePaneInDirection", "Left"],
-			"ctrl-l": ["workspace::ActivatePaneInDirection", "Right"],
-			"ctrl-k": ["workspace::ActivatePaneInDirection", "Up"],
-			"ctrl-j": ["workspace::ActivatePaneInDirection", "Down"]
-		}
+		"bindings": {}
 	},
 	{
 		"context": "ProjectPanel && not_editing",
@@ -89,6 +89,19 @@
 			"n": "project_panel::NewFile",
 			"d": "project_panel::Delete",
 			"r": "project_panel::Rename"
+		}
+	},
+	{
+		"context": "TabSwitcher",
+		"bindings": {
+			"ctrl-j": "menu::SelectNext",
+			"ctrl-k": "menu::SelectPrev"
+		}
+	},
+	{
+		"context": "Workspace",
+		"bindings": {
+			"ctrl-j": null
 		}
 	}
 ]
