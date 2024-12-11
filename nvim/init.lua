@@ -73,8 +73,8 @@ vim.keymap.set({ "n", "i" }, "<C-j>", "<cmd>tabprevious<CR>")
 vim.keymap.set({ "n", "i" }, "<C-k>", "<cmd>tabnext<CR>")
 
 -- Move tabs to reorganize them
-vim.keymap.set("n", "<C-S-j>", "<cmd>-1tabmove<CR>")
-vim.keymap.set("n", "<C-S-k>", "<cmd>+1tabmove<CR>")
+vim.keymap.set("n", "<C-A-j>", "<cmd>tabm -1<CR>")
+vim.keymap.set("n", "<C-A-k>", "<cmd>tabm +1<CR>")
 
 vim.keymap.set("n", "<space>t", "<cmd>tabnew<CR>")
 
@@ -430,7 +430,7 @@ require("lazy").setup({
 				-- Disable "format_on_save lsp_fallback" for languages that don't
 				-- have a well standardized coding style. You can add additional
 				-- languages here or re-enable it for the disabled ones.
-				local disable_filetypes = { c = true, cpp = true, h = true, go = true }
+				local disable_filetypes = { c = true, cpp = true, h = true }
 				return {
 					timeout_ms = 500,
 					lsp_fallback = not disable_filetypes[vim.bo[bufnr].filetype],
