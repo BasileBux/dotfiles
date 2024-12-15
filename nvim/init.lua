@@ -113,7 +113,7 @@ vim.keymap.set({ "n", "i", "v" }, "<up>", '<cmd>echo "Use k to move stupid!!"<CR
 vim.keymap.set({ "n", "i", "v" }, "<down>", '<cmd>echo "Use j to move stupid!!"<CR>')
 
 -- colorscheme for lualine
-local colors = {
+local bubblegum_colors = {
 	blue = "#80a0ff",
 	cyan = "#79dac8",
 	black = "#080808",
@@ -124,10 +124,35 @@ local colors = {
 	dark_grey = "#0f1419",
 }
 
-local bubbles_theme = {
+local dim_colors = {
+	blue = "#002699",
+	cyan = "#217868",
+	black = "#080808",
+	white = "#c6c6c6",
+	red = "#990030",
+	violet = "#691881",
+	grey = "#303030",
+	dark_grey = "#0f1419",
+}
+
+local obscure = {
+	blue = "#6a8cbc",
+	cyan = "#85b5ba",
+	black = "#080808",
+	white = "#c9c7cd",
+	red = "#c45570",
+	violet = "#b882a5",
+	grey = "#303030",
+	dark_grey = "#0f1419",
+}
+
+local colors = obscure
+
+local lualine_theme = {
 	normal = {
 		a = { fg = colors.black, bg = colors.violet },
-		b = { fg = colors.white, bg = colors.grey },
+		-- b = { fg = colors.white, bg = colors.grey },
+		b = { fg = colors.white, bg = colors.dark_grey },
 		c = { fg = colors.white, bg = colors.dark_grey },
 	},
 
@@ -569,23 +594,34 @@ require("lazy").setup({
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 		-- Nice colorschemes:
 		"folke/tokyonight.nvim",
-		-- Shatur/neovim-ayu
+		-- "Shatur/neovim-ayu",
+		-- "killitar/obscure.nvim",
+		-- "HoNamDuong/hybrid.nvim",
 		-- "loctvl842/monokai-pro.nvim",
 		priority = 1000, -- Make sure to load this before all the other start plugins.
-		opts = {
-			-- transparent_background = true,
-			transparent = true,
-		},
+		-- opts = {
+		-- 	transparent_background = true,
+		-- 	transparent = true,
+		-- },
 		init = function()
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-storm")
+			vim.cmd.colorscheme("tokyonight-moon")
 
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
 		end,
 	},
+
+	-- Rose pine colorscheme
+	-- {
+	-- 	"rose-pine/neovim",
+	-- 	name = "rose-pine",
+	-- 	config = function()
+	-- 		vim.cmd("colorscheme rose-pine")
+	-- 	end,
+	-- },
 
 	-- Highlight todo, notes, etc in comments
 	{
@@ -632,15 +668,6 @@ require("lazy").setup({
 			require("nvim-treesitter.install").prefer_git = true
 			---@diagnostic disable-next-line: missing-fields
 			require("nvim-treesitter.configs").setup(opts)
-		end,
-	},
-
-	{
-		"iamcco/markdown-preview.nvim",
-		cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
-		ft = { "markdown" },
-		build = function()
-			vim.fn["mkdp#util#install"]()
 		end,
 	},
 
@@ -692,21 +719,22 @@ Despite everything, it's still you.
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			options = {
-				theme = bubbles_theme,
+				-- theme = lualine_theme,
+				theme = "tokyonight-moon",
 				component_separators = "",
-				section_separators = { left = "", right = "" },
+				section_separators = { left = "", right = "" },
 			},
 			sections = {
-				lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-				lualine_b = { "filename", "branch" },
+				lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+				-- lualine_b = { "filename", "branch" },
+				lualine_b = { "filename" },
 				lualine_c = {
 					"%=", --[[ add your center compoentnts here in place of this comment ]]
 				},
 				lualine_x = {},
-				lualine_y = { "filetype", "progress" },
-				lualine_z = {
-					{ "location", separator = { right = "" }, left_padding = 2 },
-				},
+				-- lualine_y = { "filetype", "progress", "location" },
+				lualine_y = { "progress", "location" },
+				lualine_z = {},
 			},
 			inactive_sections = {
 				lualine_a = { "filename" },
