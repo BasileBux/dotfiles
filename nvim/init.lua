@@ -87,6 +87,9 @@ vim.keymap.set("n", "<S-l>", "<cmd>wincmd l<CR>", { desc = "Move focus to the ri
 vim.keymap.set("n", "<S-j>", "<cmd>wincmd j<CR>", { desc = "Move focus to the lower window" })
 vim.keymap.set("n", "<S-k>", "<cmd>wincmd k<CR>", { desc = "Move focus to the upper window" })
 
+vim.keymap.set("n", "<A-h>", "<cmd>cprev<CR>", { desc = "Go to previous element in quickfix list" })
+vim.keymap.set("n", "<A-l>", "<cmd>cnext<CR>", { desc = "Go to previous element in quickfix list" })
+
 vim.keymap.set("n", "<space>ff", "<cmd>Ex<CR>")
 
 vim.keymap.set({ "n", "i", "v" }, "<A-j>", "<cmd>m+1<cr>")
@@ -593,7 +596,8 @@ require("lazy").setup({
 		--
 		-- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
 		-- Nice colorschemes:
-		"folke/tokyonight.nvim",
+		-- "folke/tokyonight.nvim",
+		"Vallen217/eidolon.nvim",
 		-- "Shatur/neovim-ayu",
 		-- "killitar/obscure.nvim",
 		-- "HoNamDuong/hybrid.nvim",
@@ -607,7 +611,7 @@ require("lazy").setup({
 			-- Load the colorscheme here.
 			-- Like many other themes, this one has different styles, and you could load
 			-- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-			vim.cmd.colorscheme("tokyonight-moon")
+			vim.cmd.colorscheme("eidolon")
 
 			-- You can configure highlights by doing something like:
 			vim.cmd.hi("Comment gui=none")
@@ -720,7 +724,8 @@ Despite everything, it's still you.
 		opts = {
 			options = {
 				-- theme = lualine_theme,
-				theme = "tokyonight-moon",
+				-- theme = "tokyonight-moon",
+				theme = "eidolon",
 				component_separators = "",
 				section_separators = { left = "", right = "" },
 			},
