@@ -8,6 +8,7 @@
 hypr/configs/platform_default.conf
 !kitty/
 !alacritty/
+!ghostty/
 !nvim/
 nvim/lazy-lock.json
 !waybar/

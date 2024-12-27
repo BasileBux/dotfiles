@@ -3,7 +3,10 @@ padding = { x = 10, y = 10 }
 opacity = 0.8
 
 [font]
-normal = { family = "GeistMono NF", style = "Bold" }
+normal = { family = "JetBrainsMono NF", style = "Medium" }
+bold = { family = "JetBrainsMono NF", style = "Bold" }
+italic = { family = "JetBrainsMono NF", style = "Italic" }
+bold_italic = { family = "JetBrainsMono NF", style = "Bold Italic" }
 size = 13
 
 [colors.primary]
