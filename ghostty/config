@@ -1,0 +1,28 @@
+window-decoration = false
+
+cursor-style = block
+shell-integration = zsh
+shell-integration-features = no-cursor
+mouse-hide-while-typing = true
+
+font-family = JetBrainsMono NF Medium
+font-style-italic = Medium
+
+font-size = 14
+font-feature = -calt
+
+# rose-pine, Abernathy, deep
+theme = tokyonight 
+
+keybind = ctrl+shift+1=increase_font_size:5
+keybind = ctrl+shift+§=reset_font_size
+
+# Tmux replacement
+# keybind = ctrl+j=previous_tab
+# keybind = ctrl+k=next_tab
+#
+# keybind = h=adjust_selection:left
+# keybind = j=adjust_selection:down
+# keybind = k=adjust_selection:up
+# keybind = l=adjust_selection:right
+# keybind = ctrl+t=new_tab
