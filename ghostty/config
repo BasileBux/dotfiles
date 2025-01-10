@@ -1,4 +1,4 @@
-window-decoration = false
+# window-decoration = false
 
 cursor-style = block
 shell-integration = zsh
