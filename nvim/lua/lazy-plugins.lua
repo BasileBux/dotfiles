@@ -31,6 +31,10 @@ require("lazy").setup({
 
 	require("config.plugins.lualine"),
 
+	require("config.plugins.markdown-preview"),
+
+	require("config.plugins.ccc"),
+
 	require("config.plugins.copilot"),
 
 	require("config.plugins.dingllm"),
