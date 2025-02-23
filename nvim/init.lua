@@ -23,6 +23,8 @@ require("lazy-bootstrap")
 
 require("lazy-plugins")
 
+vim.opt.tabstop = 4
+
 -- Better visual panes separation -> must be called at end
 vim.api.nvim_set_hl(0, "WinSeparator", { fg = "#f578d1", bg = "NONE" })
 

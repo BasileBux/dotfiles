@@ -14,6 +14,8 @@ require("lazy").setup({
 
 	require("config.plugins.cmp"),
 
+	require("config.plugins.surround"),
+
 	-- Themes
 	require("config.plugins.themes.rose-pine"),
 	-- require("config.plugins.themes.ayu"),
@@ -22,6 +24,7 @@ require("lazy").setup({
 	-- require("config.plugins.themes.monokai"),
 	-- require("config.plugins.themes.obscure"),
 	-- require("config.plugins.themes.tokyonight"),
+	-- require("config.plugins.themes.alabaster"),
 
 	require("config.plugins.todo-comments"),
 
@@ -38,6 +41,8 @@ require("lazy").setup({
 	require("config.plugins.copilot"),
 
 	require("config.plugins.dingllm"),
+
+	require("config.plugins.codecompanion"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the

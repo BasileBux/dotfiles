@@ -1,28 +1,21 @@
-# window-decoration = false
-
 cursor-style = block
 shell-integration = zsh
 shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 
-font-family = JetBrainsMono NF Medium
+font-family = JetBrainsMono NF
 font-style-italic = Medium
 
-font-size = 14
+font-size = 15
 font-feature = -calt
 
-# rose-pine, Abernathy, deep
-theme = tokyonight 
+# rose-pine, Abernathy, deep, tokyonight
+theme = /home/basileb/.config/ghostty/theme-custom
+background-opacity = 0.8
+
+window-padding-x = 3,3
+window-padding-y = 4,0
 
 keybind = ctrl+shift+1=increase_font_size:5
 keybind = ctrl+shift+§=reset_font_size
 
-# Tmux replacement
-# keybind = ctrl+j=previous_tab
-# keybind = ctrl+k=next_tab
-#
-# keybind = h=adjust_selection:left
-# keybind = j=adjust_selection:down
-# keybind = k=adjust_selection:up
-# keybind = l=adjust_selection:right
-# keybind = ctrl+t=new_tab
