@@ -40,5 +40,7 @@ vim.opt.scrolloff = 10
 
 vim.opt.tabstop = 4
 
+vim.opt.wrap = false
+
 -- line to keep code tidy
-vim.opt.colorcolumn = "90"
+vim.opt.colorcolumn = "80"
