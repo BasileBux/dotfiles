@@ -57,3 +57,15 @@ vim.keymap.set({ "n", "i", "v" }, "<left>", '<cmd>echo "Use h to move stupid!!"<
 vim.keymap.set({ "n", "i", "v" }, "<right>", '<cmd>echo "Use l to move stupid!!"<CR>')
 vim.keymap.set({ "n", "i", "v" }, "<up>", '<cmd>echo "Use k to move stupid!!"<CR>')
 vim.keymap.set({ "n", "i", "v" }, "<down>", '<cmd>echo "Use j to move stupid!!"<CR>')
+
+-- vim.keymap.set({ "n", "i", "v" }, "<leader>m", "<cmd>!make<CR>", { desc = "Make" })
+
+vim.keymap.set("n", "<leader>m", function()
+	vim.fn.system("make")
+	local success = vim.v.shell_error == 0
+	if success then
+		vim.notify("Make: Success", vim.log.levels.INFO, { title = "Make" })
+	else
+		vim.notify("Make: Failed", vim.log.levels.ERROR, { title = "Make" })
+	end
+end, { desc = "Make" })
