@@ -13,10 +13,10 @@ autocmd('TextYankPost', {
 })
 
 -- Remove trailing whitespace on save
-autocmd('BufWritePre', {
-  pattern = '',
-  command = '%s/\\s\\+$//e'
-})
+-- autocmd('BufWritePre', {
+--   pattern = '',
+--   command = '%s/\\s\\+$//e'
+-- })
 
 -- Auto-resize splits when Vim window is resized
 autocmd('VimResized', {
@@ -40,11 +40,11 @@ autocmd('FileType', {
 })
 
 -- Automatically insert newlines in markdown instead of wrapping
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "markdown",
-  callback = function()
-    vim.opt_local.textwidth = 80
-    vim.opt_local.formatoptions:append('a')
-  end
-})
+-- vim.api.nvim_create_autocmd("FileType", {
+--   pattern = "markdown",
+--   callback = function()
+--     vim.opt_local.textwidth = 80
+--     vim.opt_local.formatoptions:append('a')
+--   end
+-- })
 
