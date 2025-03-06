@@ -112,16 +112,6 @@ return {
 			capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
 			local servers = {
-				ltex = {
-					settings = {
-						ltex = {
-							-- language = "fr", -- INFO: Uncomment for french text
-							additionalRules = {
-								motherTongue = "fr",
-							},
-						},
-					},
-				},
 				-- clangd = {},
 				-- gopls = {},
 				-- pyright = {},
