@@ -14,6 +14,8 @@ require("lazy").setup({
 
 	require("config.plugins.cmp"),
 
+	require("config.plugins.dap"),
+
 	require("config.plugins.surround"),
 
 	-- Themes
