@@ -48,3 +48,20 @@ autocmd('FileType', {
 --   end
 -- })
 
+
+-- vim.api.nvim_create_autocmd("BufWritePost", {
+--   pattern = "*.tex",
+--   callback = function()
+--     vim.fn.jobstart("make", {
+--       detach = true,
+--       on_exit = function(_, exit_code)
+--         if exit_code ~= 0 then
+--           vim.notify("Make failed with exit code: " .. exit_code, vim.log.levels.ERROR)
+--         else
+--           vim.notify("Make successful", vim.log.levels.INFO)
+--         end
+--       end
+--     })
+--   end,
+--   desc = "Run make command after saving .tex files in background"
+-- })
