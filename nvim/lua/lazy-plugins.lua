@@ -6,6 +6,8 @@ require("lazy").setup({
 
 	require("config.plugins.gitsigns"),
 
+	require("config.plugins.diffview"),
+
 	require("config.plugins.telescope"),
 
 	require("config.plugins.lspconfig"),
@@ -44,9 +46,11 @@ require("lazy").setup({
 
 	require("config.plugins.copilot"),
 
-	require("config.plugins.dingllm"),
-
 	require("config.plugins.codecompanion"),
+
+	require("config.plugins.mail"),
+
+	require("config.plugins.avante"),
 }, {
 	ui = {
 		-- If you are using a Nerd Font: set icons to an empty table which will use the
