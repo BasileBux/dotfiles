@@ -22,7 +22,8 @@ return {
 			"nvim-telescope/telescope.nvim", -- for file_selector provider telescope
 			"hrsh7th/nvim-cmp", -- autocompletion for avante commands and mentions
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-			"zbirenbaum/copilot.lua", -- for providers='copilot'
+			-- Needs either "github/copilot.vim" or "zbirenbaum/copilot.vim" to
+			-- be installed for provider = "copilot"
 			{
 				-- Make sure to set this up properly if you have lazy=true
 				"MeanderingProgrammer/render-markdown.nvim",
