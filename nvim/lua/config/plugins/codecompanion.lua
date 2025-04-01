@@ -21,8 +21,8 @@ return {
 							name = "copilot",
 							schema = {
 								model = {
-									default = "claude-3.7-sonnet",
-									-- default = "claude-3.5-sonnet",
+									-- default = "claude-3.7-sonnet",
+									default = "claude-3.5-sonnet",
 									-- default = "claude-3.7-sonnet-thought",
 									-- default = "gpt-4o-2024-08-06",
 									-- default = "o1-2024-12-17",

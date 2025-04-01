@@ -129,6 +129,17 @@ return {
 						},
 					},
 				},
+				pylsp = {
+					settings = {
+						pylsp = {
+							plugins = {
+								pycodestyle = {
+									ignore = { "E501" }, -- Ignore line length warnings
+								},
+							},
+						},
+					},
+				},
 			}
 
 			-- :Mason to open lsp menu
