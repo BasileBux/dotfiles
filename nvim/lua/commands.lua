@@ -10,7 +10,7 @@ vim.api.nvim_create_user_command("SaveChat", function()
 	if vim.fn.isdirectory(save_dir) == 0 then
 		vim.fn.mkdir(save_dir, "p")
 
-        -- Recursive gitignore
+		-- Recursive gitignore
 		local gitignore_path = save_dir .. "/.gitignore"
 		vim.fn.writefile({ "*" }, gitignore_path)
 	end
@@ -103,6 +103,64 @@ vim.api.nvim_create_user_command("LoadChat", function()
 			local bufnr = vim.api.nvim_get_current_buf()
 			vim.api.nvim_buf_set_lines(bufnr, 0, -1, false, content)
 			vim.notify("Chat loaded from " .. filepath, vim.log.levels.INFO)
+		end
+	end)
+end, {})
+
+-- I mess up commands sometimes like :W instead of :w so I did this
+vim.api.nvim_create_user_command("W", function()
+	vim.cmd("w")
+end, {})
+
+vim.api.nvim_create_user_command("Q", function()
+	vim.cmd("q")
+end, {})
+
+vim.api.nvim_create_user_command("Wq", function()
+	vim.cmd("wq")
+end, {})
+
+vim.api.nvim_create_user_command("WQ", function()
+	vim.cmd("wq")
+end, {})
+
+vim.api.nvim_create_user_command("Prompts", function()
+	local prompts_dir = vim.fn.expand("~/prompts")
+	if vim.fn.isdirectory(prompts_dir) == 0 then
+		vim.notify("No prompts directory found", vim.log.levels.ERROR)
+		return
+	end
+
+	local files = vim.fn.globpath(prompts_dir, "*", false, true)
+	if #files == 0 then
+		vim.notify("No prompts found", vim.log.levels.ERROR)
+		return
+	end
+
+	-- Format filenames for display
+	local formatted_items = {}
+	local file_lookup = {}
+	for _, file in ipairs(files) do
+		local filename = vim.fn.fnamemodify(file, ":t")
+		table.insert(formatted_items, filename)
+		file_lookup[filename] = file
+	end
+
+	-- Sort alphabetically
+	table.sort(formatted_items)
+
+	vim.ui.select(formatted_items, {
+		prompt = "Select prompt to copy:",
+		format_item = function(item)
+			return item
+		end,
+	}, function(choice)
+		if choice then
+			local filepath = file_lookup[choice]
+			local content = table.concat(vim.fn.readfile(filepath), "\n")
+			-- vim.fn.setreg('"', content) -- If system clipboard != unnamed register
+			vim.fn.setreg('+', content) -- If system clipboard == unnamed register
+			vim.notify("Prompt copied to clipboard", vim.log.levels.INFO)
 		end
 	end)
 end, {})

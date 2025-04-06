@@ -4,9 +4,19 @@ return {
 		event = "VeryLazy",
 		version = false, -- Never set this value to "*"! Never!
 		opts = {
-			provider = "copilot",
+			-- provider = "copilot",
+			provider = "gemini",
 			copilot = {
 				model = "claude-3.5-sonnet",
+			},
+			gemini = {
+				model = "gemini-2.5-pro-preview-03-25",
+			},
+			behaviour = {
+				enable_token_counting = false,
+			},
+			windows = {
+				width = 40,
 			},
 		},
 
@@ -24,14 +34,7 @@ return {
 			"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
 			-- Needs either "github/copilot.vim" or "zbirenbaum/copilot.vim" to
 			-- be installed for provider = "copilot"
-			{
-				-- Make sure to set this up properly if you have lazy=true
-				"MeanderingProgrammer/render-markdown.nvim",
-				opts = {
-					file_types = { "markdown", "Avante" },
-				},
-				ft = { "markdown", "Avante" },
-			},
+			"MeanderingProgrammer/render-markdown.nvim",
 		},
 	},
 }
