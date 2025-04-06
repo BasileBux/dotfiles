@@ -16,14 +16,25 @@ return {
 						})
 					end,
 
+					gemini = function()
+						return require("codecompanion.adapters").extend("gemini", {
+							name = "gemini_better",
+							schema = {
+								model = {
+									default = "gemini-2.5-pro-preview-03-25",
+								},
+							},
+						})
+					end,
+
 					copilot = function()
 						return require("codecompanion.adapters").extend("copilot", {
 							name = "copilot",
 							schema = {
 								model = {
+									-- default = "claude-3.7-sonnet-thought",
 									-- default = "claude-3.7-sonnet",
 									default = "claude-3.5-sonnet",
-									-- default = "claude-3.7-sonnet-thought",
 									-- default = "gpt-4o-2024-08-06",
 									-- default = "o1-2024-12-17",
 									-- default = "o3-mini-2025-01-31",
@@ -42,7 +53,8 @@ return {
 
 					-- Available: "copilot", "anthropic", "gemini", "openai"
 					chat = {
-						adapter = "copilot",
+						-- adapter = "copilot", -- basically free
+						adapter = "gemini",
 					},
 					inline = {
 						adapter = "copilot",
@@ -50,7 +62,7 @@ return {
 				},
 				display = {
 					chat = {
-						show_settings = false, -- Set to true to show settings in chat
+						show_settings = true, -- Set to true to show settings in chat
 					},
 				},
 				opts = {
