@@ -53,8 +53,8 @@ return {
 
 					-- Available: "copilot", "anthropic", "gemini", "openai"
 					chat = {
-						-- adapter = "copilot", -- basically free
-						adapter = "gemini",
+						adapter = "copilot", -- basically free
+						-- adapter = "gemini",
 					},
 					inline = {
 						adapter = "copilot",
@@ -62,7 +62,7 @@ return {
 				},
 				display = {
 					chat = {
-						show_settings = true, -- Set to true to show settings in chat
+						show_settings = false, -- Set to true to show settings in chat
 					},
 				},
 				opts = {
