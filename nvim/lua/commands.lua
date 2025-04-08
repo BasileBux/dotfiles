@@ -164,3 +164,182 @@ vim.api.nvim_create_user_command("Prompts", function()
 		end
 	end)
 end, {})
+
+-- Variable to store the window ID of the active shell script window
+local current_shell_win_id = nil
+
+vim.api.nvim_create_user_command("Shell", function()
+	-- Check if a valid shell window already exists and focus it
+	if current_shell_win_id and vim.api.nvim_win_is_valid(current_shell_win_id) then
+		vim.api.nvim_set_current_win(current_shell_win_id)
+		return
+	end
+	-- Reset in case the previous ID was invalid
+	current_shell_win_id = nil
+
+	-- Store the original CWD to set it for the floating window
+	local original_cwd = vim.fn.getcwd()
+	-- Define the path for the temporary script, but don't create it yet
+	local temp_script_path = vim.fn.tempname()
+
+	-- Function to display output in a floating window
+	local function display_output(lines)
+		local output_bufnr = vim.api.nvim_create_buf(false, true)
+		vim.api.nvim_buf_set_lines(output_bufnr, 0, -1, false, lines)
+		vim.api.nvim_buf_set_option(output_bufnr, "bufhidden", "wipe")
+		vim.api.nvim_buf_set_option(output_bufnr, "buftype", "nofile")
+		vim.api.nvim_buf_set_option(output_bufnr, "swapfile", false)
+		vim.api.nvim_buf_set_option(output_bufnr, "modifiable", false) -- Make it read-only *after* setting content
+
+		local width = vim.api.nvim_get_option("columns")
+		local height = vim.api.nvim_get_option("lines")
+		local win_width = math.floor(width * 0.8)
+		local win_height = math.floor(height * 0.6)
+		local row = math.floor((height - win_height) / 2)
+		local col = math.floor((width - win_width) / 2)
+
+		local border_opts = {
+			border = "rounded",
+			style = "minimal",
+			title = "Script Output",
+			title_pos = "center",
+		}
+
+		local output_win_id = vim.api.nvim_open_win(output_bufnr, true, {
+			relative = "editor",
+			width = win_width,
+			height = win_height,
+			row = row,
+			col = col,
+			border = border_opts.border,
+			style = border_opts.style,
+			title = border_opts.title,
+			title_pos = border_opts.title_pos,
+		})
+
+		-- Close output window with 'q'
+		vim.api.nvim_buf_set_keymap(
+			output_bufnr,
+			"n",
+			"q",
+			"<Cmd>close<CR>",
+			{ noremap = true, silent = true, nowait = true }
+		)
+	end
+
+	-- 2. Create Buffer and Floating Window for the script
+	local script_bufnr = vim.api.nvim_create_buf(false, true) -- Create a listed buffer
+	-- Set a placeholder name, not the temp file path
+	vim.api.nvim_buf_set_name(script_bufnr, "temp_shell_script.sh")
+	-- Set initial content directly
+	vim.api.nvim_buf_set_lines(script_bufnr, 0, -1, false, { "#!/bin/bash", "" })
+	-- Set buffer options
+	vim.api.nvim_buf_set_option(script_bufnr, "bufhidden", "wipe")
+	vim.api.nvim_buf_set_option(script_bufnr, "swapfile", false)
+	vim.bo[script_bufnr].filetype = "sh" -- Set filetype for syntax highlighting etc.
+
+	local width = vim.api.nvim_get_option("columns")
+	local height = vim.api.nvim_get_option("lines")
+	local win_width = math.floor(width * 0.6)
+	local win_height = math.floor(height * 0.5)
+	local row = math.floor((height - win_height) / 4) -- Position slightly higher
+	local col = math.floor((width - win_width) / 2)
+
+	local border_opts = {
+		border = "rounded",
+		style = "minimal",
+		title = "Temporary Shell Script",
+		title_pos = "center",
+	}
+
+	local script_win_id = vim.api.nvim_open_win(script_bufnr, true, {
+		relative = "editor",
+		width = win_width,
+		height = win_height,
+		row = row,
+		col = col,
+		border = border_opts.border,
+		style = border_opts.style,
+		title = border_opts.title,
+		title_pos = border_opts.title_pos,
+		zindex = 1, -- Set a high z-index to keep it on top
+	})
+	current_shell_win_id = script_win_id
+
+	-- Set the local working directory for the floating window
+	-- Use fnameescape to handle potential special characters in the path
+	vim.api.nvim_win_call(script_win_id, function()
+		vim.cmd.lcd(vim.fn.fnameescape(original_cwd))
+	end)
+
+	-- 3. Map Enter Key in the script buffer
+	vim.api.nvim_buf_set_keymap(
+		script_bufnr,
+		"n",
+		"<CR>",
+		"",
+		{
+			noremap = true,
+			silent = true,
+			callback = function()
+				-- Get content and write to the actual temporary file
+				local script_content = vim.api.nvim_buf_get_lines(script_bufnr, 0, -1, false)
+				local write_ok = vim.fn.writefile(script_content, temp_script_path)
+				if write_ok ~= 0 then
+					vim.notify("Error writing temporary script file: " .. temp_script_path, vim.log.levels.ERROR)
+					return
+				end
+				-- Make executable *after* writing
+				vim.fn.setfperm(temp_script_path, "rwxr-xr-x")
+
+				-- Execute the script
+				local output_lines = {}
+				local job_id = vim.fn.jobstart(temp_script_path, {
+					stdout_buffered = true,
+					stderr_buffered = true,
+					on_stdout = function(_, data)
+						if data then
+							for _, line in ipairs(data) do
+								if line ~= "" then
+									table.insert(output_lines, line)
+								end
+							end
+						end
+					end,
+					on_stderr = function(_, data)
+						if data then
+							table.insert(output_lines, "--- STDERR ---")
+							for _, line in ipairs(data) do
+								if line ~= "" then
+									table.insert(output_lines, line)
+								end
+							end
+						end
+					end,
+					on_exit = function(_, code)
+						table.insert(output_lines, "--- EXIT CODE: " .. code .. " ---")
+						-- Ensure execution happens in the main loop to avoid API errors
+						vim.schedule(function()
+							display_output(output_lines)
+						end)
+					end,
+				})
+				if job_id <= 0 then
+					vim.notify("Failed to start job for script: " .. temp_script_path, vim.log.levels.ERROR)
+				end
+			end,
+		}
+	)
+
+	-- 4. Cleanup: Delete the temp file when the buffer is wiped out
+	vim.api.nvim_create_autocmd("BufWipeout", {
+		buffer = script_bufnr,
+		once = true,
+		callback = function()
+			current_shell_win_id = nil
+			if vim.fn.filereadable(temp_script_path) == 1 then
+				vim.fn.delete(temp_script_path)
+			end
+		end,
+	})
+end, {})

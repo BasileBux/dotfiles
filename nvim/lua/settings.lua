@@ -45,3 +45,6 @@ vim.opt.linebreak = true
 
 -- line to keep code tidy
 vim.opt.colorcolumn = "80"
+
+-- Hide top comment in netrw
+vim.g.netrw_banner = 0
