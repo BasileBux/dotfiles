@@ -1,6 +1,6 @@
 show=drun
 sort_order=default
-width=45%
+width=25%
 height=195 # 107 for one entry line and add 44 per line you want to display
 hide_scroll=true
 term=kitty
