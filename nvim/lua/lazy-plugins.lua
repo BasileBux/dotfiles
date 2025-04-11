@@ -21,9 +21,9 @@ require("lazy").setup({
 	require("config.plugins.surround"),
 
 	-- Themes
-	require("config.plugins.themes.rose-pine"),
+	-- require("config.plugins.themes.rose-pine"),
 	-- require("config.plugins.themes.ayu"),
-	-- require("config.plugins.themes.eidolon"),
+	require("config.plugins.themes.eidolon"),
 	-- require("config.plugins.themes.hybrid"),
 	-- require("config.plugins.themes.monokai"),
 	-- require("config.plugins.themes.obscure"),
