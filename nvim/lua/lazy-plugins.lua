@@ -27,8 +27,9 @@ require("lazy").setup({
 	-- require("config.plugins.themes.hybrid"),
 	-- require("config.plugins.themes.monokai"),
 	-- require("config.plugins.themes.obscure"),
-	require("config.plugins.themes.tokyonight"),
+	-- require("config.plugins.themes.tokyonight"),
 	-- require("config.plugins.themes.alabaster"),
+	require("config.plugins.themes.oxocarbon"),
 
 	require("config.plugins.todo-comments"),
 

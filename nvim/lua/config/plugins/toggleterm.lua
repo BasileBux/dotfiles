@@ -25,7 +25,7 @@ return {
 
             -- Command for vertical terminal
             vim.api.nvim_create_user_command("Vt", function()
-                shared_term:toggle(nil, "vertical")
+                shared_term:toggle(80, "vertical")
             end, {})
 
             -- Command for tab terminal
