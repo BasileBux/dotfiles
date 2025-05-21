@@ -4,7 +4,7 @@ shell-integration-features = no-cursor
 mouse-hide-while-typing = true
 
 font-family = JetBrainsMono NF
-font-style-italic = Medium
+# font-style-italic = Medium
 
 font-size = 14
 font-feature = -calt
@@ -16,6 +16,13 @@ background-opacity = 0.8
 window-padding-x = 3,3
 window-padding-y = 4,0
 
-keybind = ctrl+shift+1=increase_font_size:5
+keybind = ctrl+.=increase_font_size:1
 keybind = ctrl+shift+§=reset_font_size
 
+# Almost vim keybinds for selection
+keybind = performable:h=adjust_selection:left
+keybind = performable:l=adjust_selection:right
+keybind = performable:j=adjust_selection:down
+keybind = performable:k=adjust_selection:up
+keybind = performable:-=adjust_selection:beginning_of_line
+keybind = performable:$=adjust_selection:end_of_line
