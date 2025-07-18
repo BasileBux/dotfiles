@@ -4,13 +4,16 @@ return {
 		event = "VeryLazy",
 		version = false, -- Never set this value to "*"! Never!
 		opts = {
-			-- provider = "copilot",
-			provider = "gemini",
-			copilot = {
-				model = "claude-3.5-sonnet",
-			},
-			gemini = {
-				model = "gemini-2.5-pro-preview-03-25",
+			provider = "copilot",
+			-- provider = "gemini",
+			providers = {
+				copilot = {
+					-- model = "claude-3.5-sonnet",
+					model = "claude-sonnet-4",
+				},
+				gemini = {
+					model = "gemini-2.5-pro-preview-03-25",
+				},
 			},
 			behaviour = {
 				enable_token_counting = false,
