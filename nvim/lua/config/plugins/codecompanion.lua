@@ -34,13 +34,8 @@ return {
 								model = {
 									-- default = "claude-3.7-sonnet-thought",
 									-- default = "claude-3.7-sonnet",
-<<<<<<< Updated upstream
 									default = "claude-sonnet-4",
 									-- default = "claude-3.5-sonnet",
-=======
-									-- default = "claude-3.5-sonnet",
-									default = "claude-sonnet-4",
->>>>>>> Stashed changes
 									-- default = "gpt-4o-2024-08-06",
 									-- default = "o1-2024-12-17",
 									-- default = "o3-mini-2025-01-31",
