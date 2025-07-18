@@ -11,6 +11,8 @@ font-family = JetBrainsMono NF
 font-size = 14
 font-feature = -calt
 
+window-decoration = false
+
 # rose-pine, Abernathy, deep, tokyonight
 theme = /home/basileb/.config/ghostty/theme-custom
 background-opacity = 0.8
